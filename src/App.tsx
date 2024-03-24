@@ -2,6 +2,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import WeatherCard from "./components/WeatherCard";
 import SeismicCard from "./components/SeismicCard";
+import IssCard from "./components/IssCard";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <div className="flex flex-row space-x-4">
           <WeatherCard />
           <SeismicCard />
+          <IssCard />
         </div>
       </div>
     </div>

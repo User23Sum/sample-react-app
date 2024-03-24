@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 
-const API_URL = "https://animated-space-fortnight-449r6qqr7gg36jv-3000.app.github.dev/api";
+const API_URL = "https://sturdy-doodle-pvq69776745f6gxx-3000.app.github.dev/api";
 
 export const getWeatherData = async (city: string): Promise<WeatherData> => {
   return new Promise<WeatherData>((resolve, reject) => {
@@ -61,3 +61,32 @@ export const getSeismicData = async (city: string): Promise<SeismicData> => {
       });
   });
 };
+
+export const getIssLocation = async (): Promise<IssLocation> => {
+  console.log("Fetching ISS location...");
+  return new Promise<IssLocation>((resolve, reject) => {
+    axios
+      .get(`${API_URL}/iss`)
+      .then((res) => {
+        console.log("Response from ISS API:", res.data); // Log response data
+        const { iss_position } = res.data;
+        if (iss_position) {
+          resolve({
+            latitude: iss_position.latitude,
+            longitude: iss_position.longitude,
+          });
+        } else {
+          reject("ISS position data not found in the response");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching ISS location:", error); // Log fetch error
+        reject("Error fetching ISS location");
+      });
+  });
+};
+
+
+
+
+

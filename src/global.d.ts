@@ -13,3 +13,8 @@ interface SeismicData{
   longitude: number,
   id: string,
 }
+
+interface IssLocation {
+  latitude: string;
+  longitude: string;
+}
