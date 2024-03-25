@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "author": "Lucian Duta",
+  "author": "Summit Limbu",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
