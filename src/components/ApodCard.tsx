@@ -51,7 +51,7 @@ const ApodCard: React.FC = () => {
           <div className="mb-1"></div>
           <button
             type="submit"
-            className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-blue-600"
+            className="custom-button"
             disabled={loading}
           >
             {loading ? "Fetching..." : "Request Picture"}

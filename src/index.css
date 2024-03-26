@@ -42,7 +42,14 @@ body {
 
 .custom-button {
   background-color: gray;
-  color: white; /* Set text color to white for better visibility */
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 13px;
 }
 
 .custom-button:hover {

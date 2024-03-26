@@ -55,7 +55,7 @@ const AstroCard: React.FC = () => {
       <hr className="my-2" />
       <div className="flex justify-center">
         <button
-          className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="custom-button"
           onClick={handleFetchAstroInfo}
           disabled={loading}
         >

@@ -46,21 +46,20 @@ const IssCard: React.FC = () => {
                 <p className="text-lg">Longitude: {issLocation.longitude}</p>
               </>
             ) : (
-              <p className="text-lg">Click the button to fetch ISS location</p>
+              <p className="text-lg">Click this to fetch ISS location</p>
             )}
           </div>
         </CardBody>
         <Divider />
-        <CardFooter>
-          <div className="flex justify-center">
+        <CardFooter className="flex justify-center">
             <button
-              className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="custom-button"
               onClick={handleFetchLocation}
               disabled={loading}
             >
               {loading ? "Fetching..." : "Fetch ISS Location"}
             </button>
-          </div>
+          
           {error && <p className="text-red-600 mt-2">{error}</p>}
         </CardFooter>
       </Card>

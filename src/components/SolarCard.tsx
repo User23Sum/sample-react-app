@@ -7,10 +7,11 @@ const SolarCard: React.FC = () => {
   const [data, setData] = useState<SolarInfo | null>(null);
   const [loadingState, setLoadingState] = useState(false);
   const [error, setError] = useState("");
+  const [inputValue, setInputValue] = useState("");
   
   const handleSearch = () => {
     setLoadingState(true);
-    getSolarData("earth") // Fetch solar data for Earth
+    getSolarData(inputValue) 
       .then((res) => {
         setError("");
         if (res) {
@@ -39,8 +40,8 @@ const SolarCard: React.FC = () => {
               id="bodyname"
               type="text"
               label="Celestial Object"
-              value="" 
-              disabled
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
             />
             <Button
               className="custom-button" 
@@ -66,8 +67,8 @@ const SolarCard: React.FC = () => {
       ) : (
         <CardBody>
           <div className="flex flex-col items-center">
-            <p className="text-xl font-bold">Solarsytem Data</p>
-            <p className="text">Enter any Solar system entity</p>
+            <p className="text-xl font-bold">Solar Sytem Data</p>
+            <p className="text">Enter any solarsystem entity</p>
           </div>
         </CardBody>
       )}
