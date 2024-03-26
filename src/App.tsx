@@ -11,7 +11,7 @@ const App = () => {
     <div className="flex flex-col h-screen">
       <NavBar />
       <PicBar />
-      <div className="flex flex-1 overflow-auto items-center h-full w-full bg-custom-image">
+      <div className="flex flex-1 overflow-auto justify-evenly items-center h-full w-full bg-custom-image">
         <div className="flex flex-row space-x-4">
           <div className="w-64"> 
             <WeatherCard />

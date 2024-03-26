@@ -35,7 +35,7 @@ const ApodCard: React.FC = () => {
   };
 
   return (
-    <div className="apod-card max-w-[400px]">
+    <div className="apod-card max-w-[700px]">
       <div className="bg-gray-100 p-4 rounded-lg">
         <h2 className="text-xl font-bold mb-4">Astronomy Picture of the Day</h2>
         <form onSubmit={handleSubmit}>
@@ -48,12 +48,13 @@ const ApodCard: React.FC = () => {
             name="date"
             className="border border-gray-300 rounded-md px-3 py-2 mb-4"
           />
+          <div className="mb-1"></div>
           <button
             type="submit"
             className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-md hover:bg-blue-600"
             disabled={loading}
           >
-            {loading ? "Fetching..." : "Fetch APOD"}
+            {loading ? "Fetching..." : "Request Picture"}
           </button>
         </form>
         {error && <p className="text-red-500 mt-2">{error}</p>}
