@@ -5,6 +5,7 @@ import SeismicCard from "./components/SeismicCard";
 import IssCard from "./components/IssCard";
 import PicBar from "./components/PicBar";
 import ApodCard from "./components/ApodCard";
+import AstroCard from "./components/AstroCard";
 
 const App = () => {
   return (
@@ -24,6 +25,9 @@ const App = () => {
           </div>
           <div> 
             <ApodCard />
+          </div>
+          <div className="w-64"> 
+            <AstroCard />
           </div>
         </div>
       </div>

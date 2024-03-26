@@ -26,3 +26,9 @@ interface ApodData {
   media_type: string;
   title: string;
 }
+
+interface AstroInfo {
+  message: string;
+  people: { name: string; craft: string }[];
+  number: number;
+}

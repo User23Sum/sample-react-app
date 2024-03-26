@@ -102,5 +102,21 @@ export const getApodData = async (date: string): Promise<ApodData> => {
   });
 };
 
+export const getAstroInfo= async (): Promise<AstroInfo> => {
+  console.log("Fetching Astro data...");
+  return new Promise<AstroInfo>((resolve, reject) => {
+    axios
+      .get(`${API_URL}/astro`)
+      .then((res) => {
+        console.log("Response from astro API:", res.data);
+        resolve(res.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching APOD data:", error);
+        reject("Error fetching APOD data");
+      });
+  });
+};
+
 
 

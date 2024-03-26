@@ -8,6 +8,7 @@ import {
 
 import React, { useState } from "react";
 import { getIssLocation } from "../api/actions";
+import { GiSpaceNeedle } from "react-icons/gi";
 
 const IssCard: React.FC = () => {
     const [issLocation, setIssLocation] = useState<IssLocation | null>(null);
@@ -40,6 +41,7 @@ const IssCard: React.FC = () => {
           <div className="flex flex-col items-center">
             {issLocation ? (
               <>
+                <GiSpaceNeedle style={{ width: "5rem", height: "5rem" }} className="mr-2" />
                 <p className="text-lg">Latitude: {issLocation.latitude}</p>
                 <p className="text-lg">Longitude: {issLocation.longitude}</p>
               </>
