@@ -6,14 +6,6 @@ interface WeatherData {
   rain: number;
 }
 
-interface SeismicData{
-  city: string;
-  magnitute: number;
-  latitude: number;
-  longitude: number,
-  id: string,
-}
-
 interface IssLocation {
   latitude: string;
   longitude: string;
@@ -31,4 +23,12 @@ interface AstroInfo {
   message: string;
   people: { name: string; craft: string }[];
   number: number;
+}
+
+interface SolarInfo {
+  englishName: string;
+  isPlanet: boolean;
+  gravity: number;
+  meanRadius: number;
+  avgTemp: number;
 }

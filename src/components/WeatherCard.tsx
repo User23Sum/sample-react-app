@@ -58,8 +58,7 @@ const WeatherCard: React.FC = () => {
               }}
             />
             <Button
-              className=""
-              color="primary"
+              className="custom-button"
               isLoading={loadingState}
               type="submit"
             >

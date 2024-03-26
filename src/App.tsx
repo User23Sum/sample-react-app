@@ -1,7 +1,7 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
 import WeatherCard from "./components/WeatherCard";
-import SeismicCard from "./components/SeismicCard";
+import SolarCard from "./components/SolarCard";
 import IssCard from "./components/IssCard";
 import PicBar from "./components/PicBar";
 import ApodCard from "./components/ApodCard";
@@ -18,7 +18,7 @@ const App = () => {
             <WeatherCard />
           </div>
           <div className="w-64"> 
-            <SeismicCard />
+            <SolarCard />
           </div>
           <div className="w-64"> 
             <IssCard />

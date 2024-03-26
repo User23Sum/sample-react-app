@@ -40,6 +40,11 @@ body {
   width: 100vw;
 }
 
+.custom-button {
+  background-color: gray;
+  color: white; /* Set text color to white for better visibility */
+}
 
-
-
+.custom-button:hover {
+  background-color: darkgray; /* Change color on hover */
+}
