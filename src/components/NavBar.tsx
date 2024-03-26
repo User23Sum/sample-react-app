@@ -1,40 +1,41 @@
-import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
-import { MdApi } from "react-icons/md";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
+import {FaShuttleSpace  } from "react-icons/fa6";
 
 const NavBar = () => {
   return (
     <Navbar className="bg-slate-100 h-16">
       <NavbarBrand>
-        <MdApi className="w-8 h-8 text-primary" />
-        <p className="font-bold text-inherit">CN6035 API</p>
+        <FaShuttleSpace  className="w-8 h-8 text-primary" />
+        <p className="font-bold text-inherit"> - CN6035 API</p>
       </NavbarBrand>
+
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        {/* <NavbarItem>
+        <NavbarItem isActive>
           <Link color="foreground" href="#">
-            Features
+            Current APIs
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
+        <NavbarItem >
+          <Link color="foreground" href="#">
+            Upcoming features
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
-            Integrations
+            Gallery
           </Link>
-        </NavbarItem> */}
-      </NavbarContent>
-      {/* <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
         </NavbarItem>
+      </NavbarContent>
+
+      <NavbarContent justify="end">
         <NavbarItem>
           <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
+            Contact Me
           </Button>
         </NavbarItem>
-      </NavbarContent> */}
+      </NavbarContent>
+
+
     </Navbar>
   );
 };
