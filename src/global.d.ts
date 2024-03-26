@@ -18,3 +18,11 @@ interface IssLocation {
   latitude: string;
   longitude: string;
 }
+
+interface ApodData {
+  date: string;
+  explanation: string;
+  hdurl: string;
+  media_type: string;
+  title: string;
+}

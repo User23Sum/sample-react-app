@@ -4,6 +4,7 @@ import WeatherCard from "./components/WeatherCard";
 import SeismicCard from "./components/SeismicCard";
 import IssCard from "./components/IssCard";
 import PicBar from "./components/PicBar";
+import ApodCard from "./components/ApodCard";
 
 const App = () => {
   return (
@@ -12,9 +13,18 @@ const App = () => {
       <PicBar />
       <div className="flex flex-1 overflow-auto items-center h-full w-full bg-custom-image">
         <div className="flex flex-row space-x-4">
-          <WeatherCard />
-          <SeismicCard />
-          <IssCard />
+          <div className="w-64"> 
+            <WeatherCard />
+          </div>
+          <div className="w-64"> 
+            <SeismicCard />
+          </div>
+          <div className="w-64"> 
+            <IssCard />
+          </div>
+          <div> 
+            <ApodCard />
+          </div>
         </div>
       </div>
     </div>

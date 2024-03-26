@@ -1,0 +1,10 @@
+.apod-card {
+    max-height: 600px; /* Set a maximum height for the card */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  }
+  
+  .apod-card-content {
+    /* Add padding and adjust font color */
+    padding: 20px;
+    color: white; /* Change the font color to white */
+  }

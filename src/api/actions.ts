@@ -86,7 +86,21 @@ export const getIssLocation = async (): Promise<IssLocation> => {
   });
 };
 
-
+export const getApodData = async (date: string): Promise<ApodData> => {
+  console.log("Fetching APOD data...");
+  return new Promise<ApodData>((resolve, reject) => {
+    axios
+      .get(`${API_URL}/apod?date=${date}`)
+      .then((res) => {
+        console.log("Response from APOD API:", res.data);
+        resolve(res.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching APOD data:", error);
+        reject("Error fetching APOD data");
+      });
+  });
+};
 
 
 
