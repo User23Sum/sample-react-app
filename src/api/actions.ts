@@ -32,28 +32,27 @@ export const getWeatherData = async (city: string): Promise<WeatherData> => {
   });
 };
 
-
 export const getIssLocation = async (): Promise<IssLocation> => {
   console.log("Fetching ISS location...");
   return new Promise<IssLocation>((resolve, reject) => {
-    axios
-      .get(`${API_URL}/iss`)
-      .then((res) => {
-        console.log("Response from ISS API:", res.data); // Log response data
-        const { iss_position } = res.data;
-        if (iss_position) {
-          resolve({
-            latitude: iss_position.latitude,
-            longitude: iss_position.longitude,
+      axios
+          .get(`${API_URL}/iss`)
+          .then((res) => {
+              console.log("Response from ISS API:", res.data);
+              const { issData } = res.data; // Extract issData from the response
+              if (issData && issData.iss_position) {
+                  resolve({
+                      latitude: issData.iss_position.latitude,
+                      longitude: issData.iss_position.longitude,
+                  });
+              } else {
+                  reject("ISS position data not found in the response");
+              }
+          })
+          .catch((error) => {
+              console.error("Error fetching ISS location:", error);
+              reject("Error fetching ISS location");
           });
-        } else {
-          reject("ISS position data not found in the response");
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching ISS location:", error); // Log fetch error
-        reject("Error fetching ISS location");
-      });
   });
 };
 

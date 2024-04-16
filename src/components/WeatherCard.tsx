@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 import { TiWeatherDownpour, TiWeatherSunny } from "react-icons/ti";
 import { getWeatherData } from "../api/actions";
+import { TiArrowUp, TiArrowDown } from "react-icons/ti";
 
 const WeatherCard: React.FC = () => {
   const [data, setData] = useState<WeatherData>();
