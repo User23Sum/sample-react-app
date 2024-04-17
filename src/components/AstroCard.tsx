@@ -6,18 +6,14 @@ const AstroCard: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    handleFetchAstroInfo();
-  }, []); // Fetch astro info when component mounts
-
   const handleFetchAstroInfo = () => {
     setLoading(true);
     setError("");
 
     getAstroInfo()
-      .then((info) => {
-        console.log("Fetched Astro info:", info);
-        setAstroInfo(info);
+      .then((response) => {
+        console.log("Fetched Astro info:", response);
+        setAstroInfo(response);
       })
       .catch((error) => {
         console.error("Error fetching Astro info:", error);
@@ -27,6 +23,10 @@ const AstroCard: React.FC = () => {
         setLoading(false);
       });
   };
+
+  useEffect(() => {
+    handleFetchAstroInfo();
+  }, []); // Fetch astro info when component mounts
 
   return (
     <div className="max-w-[400px] border rounded-lg shadow-lg p-4 bg-white">

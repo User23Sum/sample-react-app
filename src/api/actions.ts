@@ -71,22 +71,32 @@ export const getApodData = async (date: string): Promise<ApodData> => {
       });
   });
 };
-
-export const getAstroInfo= async (): Promise<AstroInfo> => {
-  console.log("Fetching Astro data...");
+export const getAstroInfo = async (): Promise<AstroInfo> => {
+  console.log("Fetching Astro info...");
   return new Promise<AstroInfo>((resolve, reject) => {
     axios
       .get(`${API_URL}/astro`)
       .then((res) => {
-        console.log("Response from astro API:", res.data);
-        resolve(res.data);
+        console.log("Response from Astro API:", res.data);
+        const { astroData} = res.data;
+        if (astroData) {
+          resolve({
+            message: "success",
+            people: astroData,
+            number: astroData.length
+          });
+        } else {
+          reject("Astro data not found in the response");
+        }
       })
       .catch((error) => {
-        console.error("Error fetching APOD data:", error);
-        reject("Error fetching APOD data");
+        console.error("Error fetching Astro info:", error);
+        reject("Error fetching Astro info");
       });
   });
 };
+
+
 
 export const getSolarData = async (bodyName: string): Promise<SolarInfo> => {
   return new Promise<SolarInfo>((resolve, reject) => {
