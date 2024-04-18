@@ -96,19 +96,18 @@ export const getAstroInfo = async (): Promise<AstroInfo> => {
   });
 };
 
-
-
 export const getSolarData = async (bodyName: string): Promise<SolarInfo> => {
   return new Promise<SolarInfo>((resolve, reject) => {
     axios
       .get(`${API_URL}/solar/${bodyName}`)
       .then((res) => {
+        const solarData = res.data.solarData; // Accessing the solarData object from the response
         resolve({
-          englishName: res.data.englishName,
-          isPlanet: res.data.isPlanet,
-          gravity: res.data.gravity,
-          meanRadius: res.data.meanRadius,
-          avgTemp: res.data.avgTemp,
+          englishName: solarData.englishName,
+          isPlanet: solarData.isPlanet,
+          gravity: solarData.gravity,
+          meanRadius: solarData.meanRadius,
+          avgTemp: solarData.avgTemp,
         });
       })
       .catch((error) => {
@@ -117,14 +116,11 @@ export const getSolarData = async (bodyName: string): Promise<SolarInfo> => {
           if (axiosError.response?.status === 404) {
             reject("Solar body not found");
           } else {
-            // It's a good practice to reject with an Error object
-            reject(axiosError.message);
+            reject("An error occurred while fetching solar data");
           }
         } else {
-          // Handle non-Axios errors
           reject("An unknown error occurred");
         }
       });
   });
 };
-

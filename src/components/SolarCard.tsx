@@ -14,17 +14,15 @@ const SolarCard: React.FC = () => {
     getSolarData(inputValue) 
       .then((res) => {
         setError("");
-        if (res) {
-          setData(res);
-          setLoadingState(false);
-        }
+        setData(res); // Set the data received from the backend
+        setLoadingState(false);
       })
       .catch((error) => {
-        setError(error);
+        setError(error.message); // Display the error message
         setLoadingState(false);
         setData(null);
       });
-  };
+  };  
   
   return (
     <Card className="max-w-[400px]">
